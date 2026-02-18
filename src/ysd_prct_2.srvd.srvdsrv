@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defintition for Student'
+define service YSD_PRCT_2 {
+  expose YPC_PRCT_2;
+}

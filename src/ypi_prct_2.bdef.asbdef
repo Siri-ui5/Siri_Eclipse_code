@@ -1,0 +1,32 @@
+managed implementation in class zbp_pi_prct_2 unique;
+strict ( 2 );
+
+define behavior for YPI_PRCT_2 alias Student
+persistent table yprct_2_table
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( numbering : managed, readonly ) Id;
+  action ( features: instance ) setAdmitted result[1] $self;
+//action ( features : instance ) setAdmitted result [1] $self;
+
+  mapping for yprct_2_table
+    {
+      Id             = id;
+      Firstname      = firstname;
+      Lastname       = lastname;
+      Age            = age;
+      Course         = course;
+      Courseduration = courseduration;
+      Status         = status;
+      Gender         = gender;
+      Dob            = dob;
+      Lastchangedat = lastchangedat;
+      Locallastchangedat = locallastchangedat;
+
+    }
+}
